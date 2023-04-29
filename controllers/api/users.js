@@ -18,7 +18,7 @@ async function create(req, res) {
         //* creating a new jwt
         const token = createJWT(user);
 
-        res.json(token);
+        res.status(200).json(token);
         
     } catch (error) {
         console.log(error);

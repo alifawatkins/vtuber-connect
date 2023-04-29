@@ -1,7 +1,8 @@
 import { useState } from "react";
-import {signUp} from '../utilities/users-service';
+// import { newProfile } from '../utilities/profiles-service';
+// import { editProfile } from '../utilities/profiles-service';
 
-function SignUpForm({setUser}) {
+function ProfileForm({setProfile}) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -24,8 +25,8 @@ function SignUpForm({setUser}) {
         password: formData.password
       }
       // returns a token with the user info
-      const user = await signUp(userData); // user service
-      setUser(user);
+    //   const user = await signUp(userData); // user service
+    //   setUser(user);
 
     } catch (error) {
       setFormData({...formData, error: "Sign Up Failed - Try Again"})
@@ -40,7 +41,7 @@ function SignUpForm({setUser}) {
     <div>
       <div className="form-container">
         <form autoComplete="off" onSubmit={handleSubmit}>
-            <label>VTuber Name</label>
+            <label>Name</label>
             <input type="text" name="name" value={formData.name} onChange={handleChange} required/>
             
             <label>Email</label>
@@ -49,7 +50,7 @@ function SignUpForm({setUser}) {
             <label>Password</label>
             <input type="password" name="password" value={formData.password} onChange={handleChange} required/>
             
-            <label>Password Confirmation</label>
+            <label>Confirm</label>
             <input type="password" name="confirm" value={formData.confirm} onChange={handleChange} required/>
 
             <button type="submit" disabled={disable}>Create New Account</button>
@@ -61,4 +62,4 @@ function SignUpForm({setUser}) {
   );
 }
 
-export default SignUpForm;
+export default ProfileForm;
