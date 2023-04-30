@@ -18,7 +18,7 @@ import './App.css';
 function App() {
   const [user, setUser] = useState(getUser());
   // const [selfProfile, setSelfProfile] = useState(getSelfProfile());
-  const [selfProfile, setSelfProfile] = useState(true);
+  const [selfProfile, setSelfProfile] = useState(false);
   const [navSelected, setNavSelected] = useState('home');
 
   return (

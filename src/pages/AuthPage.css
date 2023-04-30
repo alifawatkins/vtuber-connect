@@ -1,0 +1,15 @@
+.container {
+    display: flex;
+}
+
+.left-login {
+    flex: 3;
+}
+
+.right-login {
+    flex: 2;
+}
+
+.logo h1 {
+    color: white;
+}

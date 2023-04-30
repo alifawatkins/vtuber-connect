@@ -9,5 +9,4 @@ function NewProfilePage({user, setUser, setSelfProfile}) {
     )
 }
 
-
 export default NewProfilePage;

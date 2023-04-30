@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import {login} from '../utilities/users-service';
 
-export default function LoginForm({ setUser }) {
+export default function LoginForm({ setUser, showLogin, setShowLogin }) {
 
 const [credentials, setCredentials] = useState({
   email: '',
@@ -41,6 +41,7 @@ return (
         <input type="password" name="password" value={credentials.password} onChange={handleChange} required />
         <button type="submit">Log In</button>
       </form>
+      <button type="button" onClick={() => setShowLogin(!showLogin)}>Create New Account</button>
     </div>
     <p className="error-message">&nbsp;{error}</p>
   </div>

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import {signUp} from '../utilities/users-service';
 
-function SignUpForm({setUser}) {
+function SignUpForm({setUser, showLogin, setShowLogin}) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -54,6 +54,7 @@ function SignUpForm({setUser}) {
 
             <button type="submit" disabled={disable}>Create New Account</button>
         </form>
+        <button type="button" onClick={() => setShowLogin(!showLogin)}>Back to Login</button>
       </div>
 
       <p className="error-message">{formData.error}</p>

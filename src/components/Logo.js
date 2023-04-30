@@ -1,8 +1,7 @@
-export default function Logo() {
+export default function Logo({navbar}) {
     return (
-        <div className='logo'>
-            <div>VTuber</div>
-            <div>Connect</div>
+        <div className={navbar ? 'nav-logo' : 'logo'}>
+            <h1>VTuber Connect</h1>
         </div>
     );
 }

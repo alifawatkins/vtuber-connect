@@ -3,6 +3,7 @@ import { useState } from "react";
 import SignUpForm from "../components/SignUpForm";
 import LoginForm from "../components/LogInForm";
 import Logo from "../components/Logo";
+import './AuthPage.css';
 
 function AuthPage({ setUser }) {
   const [showLogin, setShowLogin] = useState(true);
@@ -10,20 +11,18 @@ function AuthPage({ setUser }) {
   return (
     <main className="AuthPage">
       {showLogin ? (
-        <>
+        <div className="container">
           <div className="left-login">
             <Logo />
             <p>Description here</p>
           </div>
           <div className="right-login">
-            <LoginForm setUser={setUser} setShowLogin={setShowLogin}/>
-            <button type="button" onClick={() => setShowLogin(false)}>Create New Account</button>
+            <LoginForm setUser={setUser} showLogin={showLogin} setShowLogin={setShowLogin}/>
           </div>
-        </>
+        </div>
       ) : (
         <>
-          <SignUpForm setUser={setUser} setShowLogin={setShowLogin}/>
-          <button type="button" onClick={() => setShowLogin(true)}>Create New Account</button>
+          <SignUpForm setUser={setUser} showLogin={showLogin} setShowLogin={setShowLogin}/>
         </>
       )}
     </main>
