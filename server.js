@@ -28,7 +28,7 @@ app.use(require('./config/checkToken'));
 app.use('/api/users', require('./routes/api/users'));
 // Protect the API routes below from anonymous users
 const ensureLoggedIn = require('./config/ensureLoggedIn');
-// app.use('/api/profiles', ensureLoggedIn, require('./routes/api/profiles'));
+app.use('/api/profiles', ensureLoggedIn, require('./routes/api/profiles'));
 // app.use('/api/favorites', ensureLoggedIn, require('./routes/api/favorites'));
 // app.use('/api/gamesgenres', ensureLoggedIn, require('.routes/api/gamesgenres'));
 

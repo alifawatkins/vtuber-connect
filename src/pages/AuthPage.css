@@ -1,12 +1,10 @@
-.container {
-    display: flex;
-}
-
 .left-login {
+    display: flex;
     flex: 3;
 }
 
 .right-login {
+    display: flex;
     flex: 2;
 }
 

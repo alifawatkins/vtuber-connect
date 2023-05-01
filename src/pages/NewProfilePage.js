@@ -4,7 +4,7 @@ function NewProfilePage({user, setUser, setSelfProfile}) {
     return (
         <>
             <h1>Create New Profile</h1>
-            <ProfileForm action='create' />
+            <ProfileForm action='create' setSelfProfile={setSelfProfile} user={user} />
         </>
     )
 }

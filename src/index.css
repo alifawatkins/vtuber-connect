@@ -23,6 +23,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--tan-4);
   height: 100vh;
+  padding: 2vmin;
 }
 
 code {
@@ -84,6 +85,10 @@ code {
   border-radius: 1vmin;
 }
 
+.flex-container {
+  display: flex;
+}
+
 p.error-message {
   color: var(--orange);
   text-align: center;
@@ -102,7 +107,7 @@ label {
   align-items: center;
 }
 
-input {
+input, textarea, select {
   padding: 1vmin;
   font-size: 2vmin;
   border: .1vmin solid var(--tan-3);
@@ -112,9 +117,10 @@ input {
   outline: none;
 }
 
-input:focus {
+input:focus, textarea:focus, select:focus {
   border-color: var(--orange);
 }
+
 
 button, a.button {
   margin: 1vmin;

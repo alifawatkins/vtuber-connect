@@ -14,11 +14,12 @@ import { getUser } from './utilities/users-service';
 // import { getSelfProfile } from './utlities/profiles-service';
 
 import './App.css';
+import EditProfilePage from './pages/EditProfilePage';
 
 function App() {
   const [user, setUser] = useState(getUser());
   // const [selfProfile, setSelfProfile] = useState(getSelfProfile());
-  const [selfProfile, setSelfProfile] = useState(false);
+  const [selfProfile, setSelfProfile] = useState(true);
   const [navSelected, setNavSelected] = useState('home');
 
   return (
@@ -26,14 +27,15 @@ function App() {
       { user ? 
         (selfProfile ?
           <>
-          <NavBar user={user} setUser={setUser} navSelected={navSelected} setNavSelected={setNavSelected} />
+          <NavBar user={user} setUser={setUser} selfProfile={selfProfile} navSelected={navSelected} setNavSelected={setNavSelected} />
           <Routes>
             <Route path='/' element={<HomePage user={user} setUser={setUser} favs={false} />} />
             <Route path='/home' element={<Navigate to="/" />} />
-            <Route path='/favorites' element={<HomePage user={user} favs={true}/>} />
+            <Route path='/favorites' element={<HomePage user={user} setUser={setUser} favs={true}/>} />
             <Route path='/inbox' element={<InboxPage user={user} />} />
-            <Route path='/profiles/:profileId' element={ <ProfilePage user={user}/> }/>
+            <Route path='/profiles/:profileId' element={ <ProfilePage user={user} /> }/>
             <Route path='/profile' element={ <ProfilePage  user={user} selfProfile={selfProfile} /> }/>
+            <Route path='/editProfile' element={ <EditProfilePage user={user} setUser={setUser} selfProfile={selfProfile} setSelfProfile={setSelfProfile}/> }/>
             <Route path="/*" element={<Navigate to="/" />} />
           </Routes>
           </> 

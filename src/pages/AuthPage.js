@@ -11,7 +11,7 @@ function AuthPage({ setUser }) {
   return (
     <main className="AuthPage">
       {showLogin ? (
-        <div className="container">
+        <div className="flex-container">
           <div className="left-login">
             <Logo />
             <p>Description here</p>
