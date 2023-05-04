@@ -1,6 +1,7 @@
 .left-login {
     display: flex;
     flex: 3;
+    flex-flow: column;
 }
 
 .right-login {
@@ -11,3 +12,9 @@
 .logo h1 {
     color: white;
 }
+
+.logo {
+    width: 100%;
+    margin: 0 auto;
+}
+

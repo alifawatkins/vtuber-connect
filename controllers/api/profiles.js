@@ -18,7 +18,7 @@ async function create(req, res) {
 
 async function update(req, res) {
     try{
-      const profile = await Profile.findOneAndUpdate({_id: req.params.id}, req.body);
+      const profile = await Profile.findOneAndUpdate({_id: req.params.id}, req.body, {returnDocument: 'after'});
       res.status(200).json(profile);
     }catch(e){
       res.status(400).json({ msg: e.message });
@@ -37,7 +37,7 @@ async function index(req, res) {
 async function getSelfProfile(req, res) {
     try {
       // find profile in db
-      const profile = await Profile.findOne({ user: req.user._id });
+      const profile = await Profile.findOne({ user: req.params.id }).populate('user', 'name');
       // check if we found a profile
       if (!profile) throw new Error();
       res.json(profile);
@@ -48,13 +48,8 @@ async function getSelfProfile(req, res) {
 
 async function getFavorites(req, res) {
     try {
-        const favorites = await Favorite.find({user: req.user._id}).sort('-createdAt').populate({
-            path: 'profile',
-            populate: {
-                path: 'user',
-                select: 'name'
-            }
-        }).exec();
+        const favorites = await Favorite.find({user: req.params.id}).sort('-createdAt').populate({
+          path: 'profile', populate: {path: 'user', select: 'name'}}).exec();
         if (!favorites) throw new Error();
         res.json(favorites);
     } catch {

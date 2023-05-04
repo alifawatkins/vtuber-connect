@@ -14,7 +14,7 @@ function AuthPage({ setUser }) {
         <div className="flex-container">
           <div className="left-login">
             <Logo />
-            <p>Description here</p>
+            <p>This is a space where VTubers can connect with one another to organize collabs.</p>
           </div>
           <div className="right-login">
             <LoginForm setUser={setUser} showLogin={showLogin} setShowLogin={setShowLogin}/>

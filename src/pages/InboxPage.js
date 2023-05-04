@@ -1,4 +1,4 @@
-function InboxPage() {
+function InboxPage(user, setUser) {
     return <h1>My Messages</h1>
 }
 

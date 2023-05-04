@@ -1,6 +1,6 @@
 import ProfileForm from "../components/ProfileForm";
 
-function NewProfilePage({user, setUser, setSelfProfile}) {
+function NewProfilePage({user, setSelfProfile}) {
     return (
         <>
             <h1>Create New Profile</h1>

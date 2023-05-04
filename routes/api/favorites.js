@@ -6,6 +6,6 @@ const favoritesCtrl = require('../../controllers/api/favorites');
 const ensureLoggedIn = require('../../config/ensureLoggedIn');
 
 router.post('/', ensureLoggedIn, favoritesCtrl.create);
-router.delete('/:id', ensureLoggedIn, favoritesCtrl.destroy);
+router.delete('/:favoriteId', ensureLoggedIn, favoritesCtrl.destroy);
 
 module.exports = router;

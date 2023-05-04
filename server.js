@@ -29,8 +29,8 @@ app.use('/api/users', require('./routes/api/users'));
 // Protect the API routes below from anonymous users
 const ensureLoggedIn = require('./config/ensureLoggedIn');
 app.use('/api/profiles', ensureLoggedIn, require('./routes/api/profiles'));
-// app.use('/api/favorites', ensureLoggedIn, require('./routes/api/favorites'));
-// app.use('/api/gamesgenres', ensureLoggedIn, require('.routes/api/gamesgenres'));
+app.use('/api/favorites', ensureLoggedIn, require('./routes/api/favorites'));
+app.use('/api/gamesGenres', ensureLoggedIn, require('./routes/api/gamesGenres'));
 
 // The following "catch all" route (note the *) is necessary
 // to return the index.html on all non-AJAX requests

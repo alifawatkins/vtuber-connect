@@ -5,7 +5,9 @@ async function create(req, res) {
         const favorite = await Favorite.create(req.body);
         console.log(favorite);
 
-        res.status(200).json(favorite);
+        const populatedFavorite = await Favorite.findById(favorite._id).populate({path: 'profile', populate: {path: 'user', select: 'name'}}).exec();
+
+        res.status(200).json(populatedFavorite);
         
     } catch (error) {
         console.log(error);
@@ -15,7 +17,7 @@ async function create(req, res) {
 
 async function destroy(req, res) {
     try {
-        const favorite = await Favorite.findByIdAndDelete(req.body._id);
+        const favorite = await Favorite.findOneAndDelete({_id: req.params.favoriteId});
         console.log(favorite);
 
         res.status(200).json(favorite);

@@ -1,10 +1,13 @@
 import ProfileForm from "../components/ProfileForm";
+import { useState } from "react";
 
-function EditProfilePage({user, setUser, selfProfile, setSelfProfile}) {
+function EditProfilePage({user, selfProfile, setSelfProfile}) {
+    const [profile, setProfile] = useState(selfProfile);
+    
     return (
         <>
-            <h1>Create New Profile</h1>
-            <ProfileForm action='edit' selfProfile={selfProfile} setSelfProfile={setSelfProfile} user={user} />
+            <h1>Edit Profile</h1>
+            <ProfileForm action='edit' profile={profile} setProfile={setProfile} setSelfProfile={setSelfProfile} user={user} />
         </>
     )
 }

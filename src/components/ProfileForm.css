@@ -17,11 +17,11 @@
     -webkit-text-stroke: 1px black;
 }
 
-.avatar-thumbnail {
+.avatar {
     display: block;
     height: 40vh;
     width: 40vh;
-    border-radius: 25vh;
+    border-radius: 20vh;
     margin: auto;
 }
 
@@ -56,7 +56,7 @@
   }
 
 @media (max-width: 100vh) {
-    .avatar-thumbnail {
+    .avatar {
         max-height: 33vw;
         max-width: 33vw;
         border-radius: calc(max-height/2);
