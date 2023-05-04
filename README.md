@@ -85,7 +85,7 @@ Inspired by the desire for (and difficulties of) indie Vtubers to connect with o
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This app requires no special software to used! 
+This app requires no special software to used once it is deployed. Otherwise... it needs a lot of dependencies to run locally but you shouldn't be using my program locally on your machine anyway so :P  
 
 ### Prerequisites
 
@@ -95,10 +95,10 @@ You only need a browser and access to the internet to use this app. Supported br
 * Firefox 
 * Microsoft Edge
 
-### Installation
+### Deployment
 
-1. Open the app on [Netlify](https://alifawatkins.github.io/vtuberDebut/)
-2. Create a new account (first-time users) or log in (returning users)
+1. App is not deployed yet. 
+2. When deployed~ Create a new account (first-time users) or log in (returning users)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -118,7 +118,8 @@ This app is for personal use only by VTubers only (not for viewers or fans who d
 <!-- ROADMAP -->
 ## Roadmap
 
-- [Backlog] Implementing system for favoriting/unfavoring profiles and viewing all favorited profiles on a singular page.
+- [Backlog] Ability to update username.
+- [Backlog] Ability to add games/genres to your profile (back end set up to read games/genres, the data for it hasn’t been seeded yet.)
 - [Backlog] Implement direct messaging system and inbox with its own page.  
 
 
@@ -141,6 +142,7 @@ Project Link: [https://github.com/alifawatkins/vtuber-connect.git](https://githu
 
 * [Kroonmackenzie: "Allowing Users to Upload Images in Your React App"](https://kroonmackenzie.medium.com/allowing-users-to-upload-images-in-your-react-app-1d0d7cecb934#:~:text=Copy%20and%20paste%20the%20following,%7Bsuper(props)%3Bthis.)
 * [Stack Overflow: "React JS Upload Image when user pastes an Image"](https://stackoverflow.com/questions/73659207/react-js-upload-image-when-user-pastes-an-image)
+* [Mongoose: "Getting Started"](https://mongoosejs.com/docs/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
